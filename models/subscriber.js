@@ -3,15 +3,15 @@ const mongoose = require('mongoose')
 const subscriberSchema = new mongoose.Schema({
   name:{
     type: String,
-    required: True
+    required: true
   },
   subscribedTo: {
     type: String,
-    required: True
+    required: true
   },
   subscribeDate: {
     type: Date,
-    required: True,
+    required: true,
     default: Date.now
   }
 })

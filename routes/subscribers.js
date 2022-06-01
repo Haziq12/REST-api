@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 })
 // Get one subscriber
 router.get('/:id', (req, res) => {
-
+  res.send(req.params.id)
 })
 // Creating subscriber
 router.post('/', (req, res) => {

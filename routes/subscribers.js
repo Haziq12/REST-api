@@ -13,8 +13,8 @@ router.get('/', async (req, res) => {
 })
 
 // Get one subscriber
-router.get('/:id', (req, res) => {
-  res.send(req.params.id)
+router.get('/:id', getSubscriber, (req, res) => {
+  res.send(res.subscriber.name)
 })
 
 // Creating subscriber
@@ -41,7 +41,7 @@ router.delete('/:id', (req, res) => {
 
 })
 
-async function getSubscriber(req, req, next){
+async function getSubscriber(req, res, next){
   let subscriber
   try {
     subscriber = await Subscriber.findById(req.params.id)

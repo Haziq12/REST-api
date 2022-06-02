@@ -11,10 +11,12 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: err.message })
   }
 })
+
 // Get one subscriber
 router.get('/:id', (req, res) => {
   res.send(req.params.id)
 })
+
 // Creating subscriber
 router.post('/', async (req, res) => {
   const subscriber = new Subscriber ({
@@ -25,13 +27,15 @@ router.post('/', async (req, res) => {
     const newSubscriber = await subscriber.save()
     res.status(201).json(newSubscriber)
   } catch (err) {
-
+    res.status(400).json({ message: err.message })
   }
 })
+
 // Update one subscriber
 router.patch('/:id', (req, res) => {
 
 })
+
 // Delete subscriber
 router.delete('/:id', (req, res) => {
 

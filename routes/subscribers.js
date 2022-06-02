@@ -41,5 +41,16 @@ router.delete('/:id', (req, res) => {
 
 })
 
+async function getSubscriber(req, req, next){
+  try {
+    const subscriber = await Subscriber.findById(req.params.id)
+    if(subscriber == null){
+      return res.status(404).json({ message: 'Cannot find subscriber' })
+    }
+  } catch (err) {
+
+  }
+}
+
 module.exports = router
 
